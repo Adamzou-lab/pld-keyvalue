@@ -20,7 +20,6 @@ Schéma simple :
 "rate:adam"       -> hash ->  3
 ```
 
-Source : [lien — à compléter]
 
 ## 3. Comment fonctionnent les opérations de base ?
 
@@ -34,13 +33,13 @@ DEL user:42            # supprimer
 
 Deux particularités à souligner : l'**update n'existe pas** — un `SET` réécrit **toute** la valeur, pas un morceau ; et on ne peut chercher que par la **clé exacte**, jamais par le contenu d'une valeur.
 
-Source : [lien — à compléter]
+
 
 ## 4. Pourquoi ce modèle existe-t-il ?
 
 Certains accès (sessions, cache, compteurs) n'ont besoin d'**aucune** capacité du SQL, mais d'une **vitesse extrême** sous forte charge. À chaque requête, le SQL paie le prix de sa puissance : parser, planifier, vérifier le schéma, verrouiller. Le clé-valeur supprime tout cela et ne garde que l'accès direct : latence inférieure à la milliseconde, et mise à l'échelle horizontale facile car il n'y a aucune relation à coordonner entre les nœuds.
 
-Source : [lien — à compléter]
+
 
 ## 5. Forces, limites, cas d'usage
 
@@ -88,4 +87,4 @@ Le clé-valeur ne remplace **jamais** la base principale, il la **complète** : 
 - Documentation officielle Redis : https://redis.io/docs/
 - Try Redis (tutoriel interactif) : https://try.redis.io/
 - GeeksforGeeks, *Types of NoSQL Databases* : https://www.geeksforgeeks.org/dbms/types-of-nosql-databases/
-- [autres sources réellement consultées — à ajouter]
+
