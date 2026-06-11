@@ -1,4 +1,4 @@
-"""POC clé-valeur (Redis) — PLD Alternative Data Models.
+"""POC clé-valeur (Redis) pour le PLD Alternative Data Models.
 
 Scénario fil rouge : la session web d'un site e-commerce.
 5 blocs : CRUD, structures de données, TTL, rate limiter, cache.
@@ -16,7 +16,7 @@ r.flushdb()  # base vide à chaque lancement, pour une démo reproductible
 
 
 # ---------------------------------------------------------------
-# BLOC 1 — CRUD : créer, lire, mettre à jour, supprimer
+# BLOC 1 : CRUD (créer, lire, mettre à jour, supprimer)
 # Particularité du modèle : l'update n'existe pas, c'est un SET
 # qui écrase TOUTE la valeur (la base ne voit pas l'intérieur).
 # ---------------------------------------------------------------
@@ -35,7 +35,7 @@ print("\n=== BLOC 1 : CRUD ===")
 
 
 # ---------------------------------------------------------------
-# BLOC 2 — Structures de données (au-delà des strings)
+# BLOC 2 : structures de données (au-delà des strings)
 # Hash : permet de lire/modifier UN champ sans tout réécrire
 # (c'est le remède à la limite vue au bloc 1).
 # Liste : une file d'attente FIFO en 2 commandes.
@@ -50,7 +50,7 @@ print("\n=== BLOC 2 : structures de données ===")
 
 
 # ---------------------------------------------------------------
-# BLOC 3 — TTL : la donnée qui s'autodétruit
+# BLOC 3 : TTL, la donnée qui s'autodétruit
 # En SQL il faudrait un cron + DELETE ; ici c'est natif.
 # ---------------------------------------------------------------
 print("\n=== BLOC 3 : TTL ===")
@@ -61,7 +61,7 @@ print("\n=== BLOC 3 : TTL ===")
 
 
 # ---------------------------------------------------------------
-# BLOC 4 — Rate limiter : le "small service" demandé par la doc
+# BLOC 4 : rate limiter, le "small service" demandé par la doc
 # INCR est atomique : deux requêtes simultanées ne se marchent
 # jamais dessus, sans verrou ni transaction.
 # ---------------------------------------------------------------
@@ -83,7 +83,7 @@ def autoriser(user, limite=5):
 
 
 # ---------------------------------------------------------------
-# BLOC 5 — Cache : la persistance polyglotte en live
+# BLOC 5 : cache, la persistance polyglotte en live
 # Redis ne remplace pas la base SQL, il se met DEVANT :
 # 1er appel ~2 s (cache miss), 2e appel ~2 ms (cache hit).
 # ---------------------------------------------------------------

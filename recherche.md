@@ -1,6 +1,6 @@
-# Le modèle clé-valeur — Research Summary
+# Research Summary : le modèle clé-valeur
 
-Équipe : [prénoms à compléter] — PLD Alternative Data Models — Holberton School Toulouse
+Équipe : [prénoms à compléter], PLD Alternative Data Models, Holberton School Toulouse
 
 ## 1. Qu'est-ce que le modèle stocke ?
 
@@ -15,9 +15,9 @@ Source : [lien]
 Schéma simple :
 
 ```
-"session:abc123"  ──hash──>  { "user": "Adam", "panier": [...] }
-"user:42"         ──hash──>  { nom: "Adam", ville: "Toulouse" }
-"rate:adam"       ──hash──>  3
+"session:abc123"  -> hash ->  { "user": "Adam", "panier": [...] }
+"user:42"         -> hash ->  { nom: "Adam", ville: "Toulouse" }
+"rate:adam"       -> hash ->  3
 ```
 
 Source : [lien]
@@ -59,7 +59,7 @@ Persistance et clustering (à savoir expliquer, pas à mettre en place) :
 
 ### vs relationnel (SQL)
 
-Plus simple : [lire/écrire un objet connu par sa clé, expirer des données, compter à haute fréquence — exemples du POC]
+Plus simple : [lire/écrire un objet connu par sa clé, expirer des données, compter à haute fréquence (exemples du POC)]
 
 Plus dur : [toute question analytique : pas de WHERE, pas de jointure, pas d'agrégation. Le SQL reste meilleur pour les données précieuses, les questions imprévues et la cohérence garantie.]
 
@@ -73,11 +73,11 @@ Plus dur : [toute question analytique : pas de WHERE, pas de jointure, pas d'agr
 
 ## 7. Ce qui nous a surpris
 
-[À remplir au fil de la matinée — la consigne le demande explicitement. Premiers candidats : un update écrase toute la valeur ; la base ne peut littéralement pas chercher dans les valeurs ; la simplicité extrême du CRUD.]
+[À remplir au fil de la matinée, la consigne le demande explicitement. Premiers candidats : un update écrase toute la valeur ; la base ne peut littéralement pas chercher dans les valeurs ; la simplicité extrême du CRUD.]
 
 ## Sources
 
 - Documentation officielle Redis : https://redis.io/docs/
 - Try Redis (tutoriel interactif) : https://try.redis.io/
-- GeeksforGeeks — Types of NoSQL Databases : [lien exact consulté]
+- GeeksforGeeks, Types of NoSQL Databases : [lien exact consulté]
 - [autres sources au fil de l'eau]

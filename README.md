@@ -1,6 +1,6 @@
-# POC clé-valeur — Redis
+# POC clé-valeur (Redis)
 
-PLD Alternative Data Models — Holberton School Toulouse.
+PLD Alternative Data Models, Holberton School Toulouse.
 Démonstration du modèle clé-valeur avec Redis : CRUD, structures de données, TTL, rate limiter et cache.
 
 ## Lancer le POC
